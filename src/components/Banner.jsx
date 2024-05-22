@@ -12,8 +12,8 @@ export const Banner = () => {
     "Chartered Professional Accountant"
   ];
   const [text, setText] = useState("");
-  const period = 800; //*duration value between each word animation
-  const [delta, setDelta] = useState(100); //*duration between each letter animation
+  const period = 800; //*set duration to wait between each phrase 
+  const [delta, setDelta] = useState(100); //*duration value used between each letter animation
 
   useEffect(() => {
     let ticker = setInterval(() => {
