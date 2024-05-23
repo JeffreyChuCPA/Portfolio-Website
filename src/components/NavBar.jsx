@@ -4,8 +4,9 @@ import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import { ToastMessage } from "./ToastMessage";
 
-export const NavBar = () => {
+export const NavBar = ({status}) => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false)
 
@@ -60,6 +61,11 @@ export const NavBar = () => {
           </span>
         </Navbar.Collapse>
       </Container>
+      {
+        status.message && 
+        <ToastMessage message={status.message} />
+        
+      }
     </Navbar>
   );
 };

@@ -6,17 +6,19 @@ import { Projects } from './components/Projects'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useState } from 'react'
 
 function App() {
+  const [status, setStatus] = useState({})
 
   return (
     <>
       <div className='App'>
-      <NavBar />
+      <NavBar status={status} />
       <Banner />
       <Skills />
       <Projects />
-      <Contact />
+      <Contact setStatus={setStatus} />
       <Footer />
       </div>
     </>

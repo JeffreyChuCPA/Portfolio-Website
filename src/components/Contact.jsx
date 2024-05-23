@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import contactImg from "../assets/img/contact-img.svg"
 
-export const Contact = () => {
+export const Contact = ({setStatus}) => {
   const formInitialDetails = {
     firstName: '',
     lastName: '',
@@ -13,7 +13,7 @@ export const Contact = () => {
   
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [buttonText, setButtonText] = useState('Send')
-  const [status, setStatus] = useState({})
+  // const [status, setStatus] = useState({})
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -77,12 +77,6 @@ export const Contact = () => {
                   <textarea rows='6' value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)}/>
                   <button type='submit'><span>{buttonText}</span></button>
                 </Col>
-                {
-                  status.message && 
-                  <Col>
-                    <p className={status.success === false ? 'danger' : 'success'}>{status.message}</p>
-                  </Col>
-                }
               </Row>
             </form>
           </Col>
