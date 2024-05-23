@@ -12,16 +12,19 @@ export const Projects = () => {
       title: "Weathergram",
       description: "Modern Weather App",
       imgURL: projImg1,
+      projectURL: ''
     },
     {
       title: "Risk of Rain 2 Multishop Terminal Simulator",
       description: "Interactive simulator of the Multishop Terminal feature in Risk of Rain 2",
       imgURL: projImg2,
+      projectURL: 'https://risk-of-rain-2-multishop-simulator-sage.vercel.app/'
     },
     {
       title: "Polaris",
       description: "Investment portfolio tracker for stocks and options",
       imgURL: projImg3,
+      projectURL: ''
     },
   ]
 
