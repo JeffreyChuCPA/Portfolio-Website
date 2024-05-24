@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg1 from "../assets/img/accounting-man.svg";
+import headerImg2 from "../assets/img/programmer-man.svg";
 import { useState, useEffect } from "react";
 
 export const Banner = () => {
@@ -12,7 +13,7 @@ export const Banner = () => {
     "Chartered Professional Accountant"
   ];
   const [text, setText] = useState("");
-  const period = 800; //*set duration to wait between each phrase 
+  const period = 800; //*set duration to wait between each phrase
   const [delta, setDelta] = useState(100); //*duration value used between each letter animation
 
   useEffect(() => {
@@ -56,21 +57,29 @@ export const Banner = () => {
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
               {`Hi! I'm Jeffrey`}
-              <br/>
-              a <span className="wrap">{text}</span>
+              <br />a <span className="wrap">{text}</span>
             </h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              I'm an aspiring <b>developer</b> transitioning from an{" "}
+              <b>accounting and finance</b> background with a Chartered Professional
+              Accountant (CPA) designation in Ontario, Canada. 
             </p>
-            <button onClick={() => console.log("connect")}>
+            <button
+              onClick={() => {
+                const section = document.getElementById("connect");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Let's Connect <ArrowRightCircle size={25} />
             </button>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="Header Image" />
+            <div className="img-container">
+              <img src={headerImg2} alt="Header Image" className="pic" id='pic2'/>
+              <img src={headerImg1} alt="Header Image" className="pic" id="pic1"/>
+            </div>
           </Col>
         </Row>
       </Container>

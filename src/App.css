@@ -51,6 +51,11 @@ p, a, li, button, ul {
   text-decoration: none;
 }
 
+b {
+  font-weight: 700;
+  font-size: 1.5rem
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -237,7 +242,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background-image: url('./assets/img/banner-background.jpg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -287,21 +292,69 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 3s linear infinite;
+  animation: updown 3s linear infinite, fade 5s infinite;;
 }
 @keyframes updown {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     50% {
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     100% {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+.img-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: 480px;
+  margin: 0 auto;
+}
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#pic1 {
+  animation-delay: 0s;
+  left: 8%;
+  top: 1%;
+  height: 530px;
+  width: 101%;
+  --fade-delay: 0s;
+  animation: updown 3s linear infinite, fade 5s infinite var(--fade-delay);
+}
+
+#pic2 {
+  --fade-delay: 2.5s;
+  animation: updown 3s linear infinite, fade 5s infinite var(--fade-delay);
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /** Skills */
@@ -338,7 +391,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 0 auto 15px auto;
 }
 .background-image-left {
-  top: -20%;
+  top: -90%;
   position: absolute;
   bottom: 0;
   left: 0%;
@@ -551,7 +604,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /** Footer */
 .footer {
-  padding: 50px 0 50px 0;
+  padding: 2vh 0 2vh 0;
   background-image: url('./assets/img/footer-bg.png');
   background-position: center center;
   background-size: cover;
@@ -571,16 +624,5 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear
-  }
 }
 

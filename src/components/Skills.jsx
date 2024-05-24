@@ -1,10 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
-import meter1 from "../assets/img/meter1.svg"
-import meter2 from "../assets/img/meter2.svg"
-import meter3 from "../assets/img/meter3.svg"
-import colorSharp from '../assets/img/color-sharp.png'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import meter1 from "../assets/img/meter1.svg";
+import meter2 from "../assets/img/meter2.svg";
+import meter3 from "../assets/img/meter3.svg";
+import colorSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
   const responsive = {
@@ -28,16 +28,41 @@ export const Skills = () => {
   };
 
   return (
-    <section className="skill" id="skills">
+    <section className="skill" id="about me">
       <Container>
         <Row>
           <Col>
             <div className="skill-bx">
-              <h2>
-                Skills
-              </h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry standard dummy text.</p>
-              <Carousel responsive={responsive} infinite={true} className="skill-slider">
+              <h2>About Me</h2>
+              <p>
+                With an undergraduate and master's degrees in accounting and
+                finance, I kickstarted my career path in a public accounting
+                firm, gaining professional experience working with clients
+                across various industries. From that experience, I realized my
+                passion was more towards creating tangible solutions that people
+                can interact with, which inspired me to transition into web and
+                software development.
+                {/* My decision to make the transition to becoming a
+                developer started when I realized my passion was more towards
+                building tangible solutions that people can interact with. */}
+                <br></br>
+                <br></br> My accounting background has equipped me with strong
+                analytical skills, attention to detail, and problem-solving
+                abilities—all of which are essential for software and web
+                development. Additionally, my experience in understanding
+                fundamental business operations and managing client relations
+                enables me to develop software solutions that are both effective
+                and user-friendly.
+                <br></br>
+                <br></br>I am excited to leverage my accounting expertise and my
+                enthusiasm for technology to build innovative applications that
+                make a real impact.
+              </p>
+              {/* <Carousel
+                responsive={responsive}
+                infinite={true}
+                className="skill-slider"
+              >
                 <div className="item">
                   <img src={meter1} alt="Image" />
                   <h5>Web Development</h5>
@@ -54,12 +79,12 @@ export const Skills = () => {
                   <img src={meter1} alt="Image" />
                   <h5>Web Development</h5>
                 </div>
-              </Carousel>
+              </Carousel> */}
             </div>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-left" src={colorSharp}/>
+      <img className="background-image-left" src={colorSharp} />
     </section>
-  )
-}
+  );
+};
