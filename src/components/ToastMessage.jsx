@@ -8,9 +8,9 @@ export const ToastMessage = ({message, setStatus}) => {
 
   let messageColor = ''
   switch (message) {
-    case 'Message sent successfully': messageColor = 'green';
+    case 'Message sent successfully': messageColor = 'chartreuse';
       break;
-    case 'Something went wrong, Please try again later.': messageColor = 'red';
+    case 'Something went wrong, Please try again later.': messageColor = 'crimson';
       break;
     default: 
       messageColor = "gray"
