@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <div className='App'>
-      <NavBar status={status} />
+      <NavBar status={status} setStatus={setStatus} />
       <Banner />
       <Skills />
       <Projects />

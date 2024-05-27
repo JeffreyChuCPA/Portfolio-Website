@@ -30,17 +30,15 @@ contactEmail.verify((error) => {
 });
 
 router.post("/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
+  const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-  const phone = req.body.phone;
   const mail = {
     from: name,
     to: process.env.EMAIL_USER,
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
           <p>Email: ${email}</p>
-          <p>Phone: ${phone}</p>
           <p>Message: ${message}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {

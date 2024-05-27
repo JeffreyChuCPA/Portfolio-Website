@@ -6,7 +6,7 @@ import navIcon2 from "../assets/img/github-mark-white.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import { ToastMessage } from "./ToastMessage";
 
-export const NavBar = ({ status }) => {
+export const NavBar = ({ status, setStatus }) => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -93,7 +93,7 @@ export const NavBar = ({ status }) => {
           </span>
         </Navbar.Collapse>
       </Container>
-      {status.message && <ToastMessage message={status.message} />}
+      {status.message && <ToastMessage message={status.message} setStatus={setStatus} />}
     </Navbar>
   );
 };
