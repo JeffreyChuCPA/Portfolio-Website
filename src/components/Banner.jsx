@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg1 from "../assets/img/accounting-man.svg";
 import headerImg2 from "../assets/img/programmer-man.svg";
+import flag from "../assets/img/flag.png";
 import { useState, useEffect } from "react";
 
 export const Banner = () => {
@@ -62,9 +63,9 @@ export const Banner = () => {
             <p>
               I'm an aspiring <b>developer</b> transitioning from an{" "}
               <b>accounting and finance</b> background with a Chartered Professional
-              Accountant (CPA) designation in Ontario, Canada. 
+              Accountant (CPA) designation in Ontario, Canada <img className="flag" src={flag}/>. 
             </p>
-            <button
+            <button className="connect"
               onClick={() => {
                 const section = document.getElementById("connect");
                 if (section) {

@@ -5,6 +5,7 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import profilePic from "../assets/img/profile-website.jpg";
 
 export const Skills = () => {
   const responsive = {
@@ -34,30 +35,27 @@ export const Skills = () => {
           <Col>
             <div className="skill-bx">
               <h2>About Me</h2>
-              <p>
-                With an undergraduate and master's degrees in accounting and
-                finance, I kickstarted my career path in a public accounting
-                firm, gaining professional experience working with clients
-                across various industries. From that experience, I realized my
-                passion was more towards creating tangible solutions that people
-                can interact with, which inspired me to transition into web and
-                software development.
-                {/* My decision to make the transition to becoming a
-                developer started when I realized my passion was more towards
-                building tangible solutions that people can interact with. */}
-                <br></br>
-                <br></br> My accounting background has equipped me with strong
-                analytical skills, attention to detail, and problem-solving
-                abilities—all of which are essential for software and web
-                development. Additionally, my experience in understanding
-                fundamental business operations and managing client relations
-                enables me to develop software solutions that are both effective
-                and user-friendly.
-                <br></br>
-                <br></br>I am excited to leverage my accounting expertise and my
-                enthusiasm for technology to build innovative applications that
-                make a real impact.
-              </p>
+              <div className="profile-container">
+                <img src={profilePic} className="profile-pic"></img>
+                <p className="profile-text">
+                  Back in 2023, I decided to transition from my professional
+                  background in accounting and finance to the world of coding
+                  and web development. As a self-taught programmer, I discovered
+                  my passion for building web applications with a keen focus on
+                  UI/UX design.
+                  <br></br>
+                  <br></br>
+                  These days, my primary focus is on learning the complexities
+                  of front-end development and creating projects that make a
+                  real impact for users. I enjoy delving into the inner workings
+                  of technology to understand how things function and designing
+                  aesthetically pleasing and user-friendly interfaces.
+                  <br></br>
+                  <br></br>
+                  When I'm not at my computer, you can find me playing
+                  volleyball, badminton, or jamming away on my guitar.
+                </p>
+              </div>
               {/* <Carousel
                 responsive={responsive}
                 infinite={true}

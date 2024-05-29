@@ -41,7 +41,7 @@ export const Contact = ({setStatus}) => {
         setStatus({ success: false, message: "Something went wrong, Please try again later."})
       }
     } catch (error) {
-      console.log('Error:', error);
+      // console.log('Error:', error);
       setStatus({ success: false, message: "Something went wrong, Please try again later."})
       setButtonText("Send")
     }

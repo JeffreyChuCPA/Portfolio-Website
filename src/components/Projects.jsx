@@ -31,8 +31,8 @@ export const Projects = () => {
   return (
     <section className="project" id="projects">
       <Container>
-        <Row>
-          <Col>
+        <Row className="overflow-hidden">
+          <Col >
             <h2>Projects</h2>
             {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry standard dummy text

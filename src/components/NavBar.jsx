@@ -1,6 +1,6 @@
 import { Nav, Container, Navbar } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import logo from "../assets/img/logo.svg";
+import logo from "../assets/img/logo.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/github-mark-white.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
@@ -32,7 +32,7 @@ export const NavBar = ({ status, setStatus }) => {
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" />
+          <img className="logo" src={logo} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
@@ -67,7 +67,7 @@ export const NavBar = ({ status, setStatus }) => {
               Projects
             </Nav.Link>
           </Nav>
-          <span className="navbar-text">
+          <div className="navbar-text">
             <div className="social-icon">
               <a href="https://www.linkedin.com/in/jchu2/">
                 <img src={navIcon1} alt="" />
@@ -90,7 +90,7 @@ export const NavBar = ({ status, setStatus }) => {
             >
               <span>Let's Connect</span>
             </button>
-          </span>
+          </div>
         </Navbar.Collapse>
       </Container>
       {status.message && <ToastMessage message={status.message} setStatus={setStatus} />}
