@@ -21,35 +21,42 @@ export const Contact = ({setStatus}) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setButtonText('Sending...')
     setIsSubmitDisabled(true)
+
+    // Formspree endpoint
+    const formspreeEndpoint = "https://formspree.io/f/xwpeeaqb"
+
+    // Create FormData object from form details
+    const formData = new FormData();
+    formData.append('name', formDetails.name);
+    formData.append('email', formDetails.email);
+    formData.append('message', formDetails.message);
+
     try {
-      let response = await fetch('http://localhost:5000/contact', {
-        method: "POST",
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        body: formData,
         headers: {
-          "Content-Type": "Application/json;charset=utf-8",
-        },
-        body: JSON.stringify(formDetails)
-      })
-      await response.json()
-      setFormDetails(formInitialDetails)
+          'Accept': 'application/json'
+        }
+      });
+
       if (response.ok) {
-        setStatus({ success: true, message: 'Message sent successfully'})
-        setButtonText("Wait to Send Again")
+        alert("Thank you for the message!");
+        setButtonText('Thanks!')
+        setFormDetails(formInitialDetails); // Reset form details
       } else {
-        setStatus({ success: false, message: "Something went wrong, Please try again later."})
+        alert("There was an error submitting your message. Please try again later.");
+        setButtonText('Send')
+        setIsSubmitDisabled(false)
       }
     } catch (error) {
-      // console.log('Error:', error);
-      setStatus({ success: false, message: "Something went wrong, Please try again later."})
-      setButtonText("Send")
-    }
-    setTimeout(() => {
+      alert("There was an error submitting your message. Please try again later.");
+      setButtonText('Send')
       setIsSubmitDisabled(false)
-      setButtonText("Send")
-    }, 20000)
-    
+    }
   }
 
   return (
@@ -64,13 +71,13 @@ export const Contact = ({setStatus}) => {
             <form onSubmit={handleSubmit}>
               <Row>
                 <Col size={12} sm={6} className='px-1'>
-                  <input required type='text' value={formDetails.name} placeholder='Name' onChange={(e) => onFormUpdate('name', e.target.value)} />
+                  <input required type='text' name='name' value={formDetails.name} placeholder='Name' onChange={(e) => onFormUpdate('name', e.target.value)} />
                 </Col>
                 <Col size={12} sm={6} className='px-1'>
-                  <input required type='email' value={formDetails.email} placeholder='Email' onChange={(e) => onFormUpdate('email', e.target.value)} />  
+                  <input required type='email' name='email' value={formDetails.email} placeholder='Email' onChange={(e) => onFormUpdate('email', e.target.value)} />  
                 </Col>
                 <Col size={12} className="px-1">
-                  <textarea required rows='6' value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)}/>
+                  <textarea required rows='6' name='message' value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)}/>
                   <button type='submit' disabled={isSubmitDisabled}><span>{buttonText}</span></button>
                 </Col>
               </Row>
