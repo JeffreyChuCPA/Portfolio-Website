@@ -1,4 +1,4 @@
-/** Custom Fonts */
+* Custom Fonts
 @font-face {
   font-family: Centra;
   src: url("./assets/font/CentraNo2-Bold.ttf");
@@ -27,7 +27,9 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  overflow-y: scroll;
 }
+
 
 body {
   font-weight: 400;
@@ -100,10 +102,12 @@ p.danger {
   color: red;
 }
 /************ Navbar Css ************/
+
 nav.navbar {
   padding: 18px 0;
   position: fixed;
   width: 100%;
+  max-width: 100vw; /* Prevent exceeding viewport width */
   top: 0;
   z-index: 9999;
   transition: 0.32s ease-in-out;
@@ -115,8 +119,9 @@ nav.navbar {
 .logo:hover {
   filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(250deg)
 }
+
 nav.navbar.scrolled {
-  padding: 10px 0;
+  padding: 0px 0;
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
@@ -471,17 +476,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /** Skills */
+
+.react-multi-carousel-list {
+  width: 100%;
+  margin: 0 auto;
+  height: 80%;
+}
+
+.carouselItem {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carouselItem::hover {
+  padding: 40px;
+}
+
+.custom-container {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+}
+
 .skill {
-  padding: 0 0 50px 0;
+  padding: 50px 0 50px 0;
   position: relative;
 }
-.skill-bx {
+
+.proj-bx {
   background: #151515;
   border-radius: 64px;
   text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
+  padding: 20px 30px;
   border: #666 1px solid;
+
 }
 .skill h2 {
   font-size: 45px;
@@ -495,15 +523,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   margin: 14px 0 75px 0;
 }
-.skill-slider {
-  width: 80%;
+/* .skill-slider {
+  width: 100%;
   margin: 0 auto;
   position: relative;
-}
-.skill-slider .item img {
+  border: red 1px solid;
+  display: flex;
+  gap: 10px;
+} */
+/* .skill-slider .item img {
   width: 50%;
   margin: 0 auto 15px auto;
-}
+} */
 .background-image-left {
   top: -90%;
   position: absolute;
@@ -556,10 +587,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 /** Projects */
+.container {
+  position: relative;
+}
+
 .project {
-  padding: 80px 0;
+  padding: 40px 0;
   position: relative;
   background-color: black;
+  background-image: url('./assets/img/color-sharp2.png');
+  background-repeat: no-repeat;
+  background-position: right;
 }
 .project h2 {
   font-size: 45px;
@@ -639,11 +677,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
-  margin-top: 50px;
-  z-index: 2;
+  margin-top: 20px;
+  z-index: 10;
   max-height: 305px;
   max-width: 416px;
-  min-width: 279px;
+  /* min-width: 279px; */
   margin-left: auto;
   margin-right: auto;
 }

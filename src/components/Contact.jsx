@@ -26,7 +26,7 @@ export const Contact = ({setStatus}) => {
     setIsSubmitDisabled(true)
 
     // Formspree endpoint
-    const formspreeEndpoint = "https://formspree.io/f/xwpeeaqb"
+    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
 
     // Create FormData object from form details
     const formData = new FormData();
